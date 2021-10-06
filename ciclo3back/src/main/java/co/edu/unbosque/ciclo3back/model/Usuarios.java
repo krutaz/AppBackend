@@ -5,6 +5,13 @@ import javax.persistence.Id;
 
 @Entity
 public class Usuarios {
+	@Id 
+	private long cedula_usuario;
+	private String nombre_usuario;
+	private String email_usuario;
+	private String usuario;
+	private String password;
+	
 	public long getCedula_usuario() {
 		return cedula_usuario;
 	}
@@ -35,10 +42,4 @@ public class Usuarios {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Id 
-	private long cedula_usuario;
-	private String nombre_usuario;
-	private String email_usuario;
-	private String usuario;
-	private String password;
 }
