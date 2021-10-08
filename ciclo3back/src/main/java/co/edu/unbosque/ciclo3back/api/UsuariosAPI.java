@@ -22,18 +22,18 @@ public class UsuariosAPI {
 	@Autowired //inyecta la dependencia de todos los métodos del JPA para usuarioDAO
 	private UsuariosDAO usuariosDAO;
 	
-	@PostMapping("/guardar")//Request convierte en un objeto Java desde un JSon
+	@PostMapping("/crear")//Request convierte en un objeto Java desde un JSon
 	public void guardar(@RequestBody Usuarios usuarios) {
 		usuariosDAO.save(usuarios);
 	}
 	
-	@GetMapping("/listar")
+	@GetMapping("/consultar")
 	public List<Usuarios> listar(){
 		return usuariosDAO.findAll();
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
-	public void eliminar(@PathVariable("id") Integer id) {
+	public void eliminar(@PathVariable("id") Long id) {
 		usuariosDAO.deleteById(id);
 	}
 	
